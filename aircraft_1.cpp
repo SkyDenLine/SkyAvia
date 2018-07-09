@@ -11,6 +11,7 @@
 #include <sstream>
 
 
+
 QString select_seats[21][2];
 QString bill_info[10];
 QString Ticket_Data[6];
@@ -43,6 +44,7 @@ void Aircraft_1::HideFormBuy()
 
 void Aircraft_1::SetBill()
 {
+    setlocale(LC_ALL,"Russian");
     QTextStream BwriterN (&fbill);
     fbill.open( QIODevice::ReadWrite | QIODevice::Text);
     BwriterN.readLine();
@@ -60,15 +62,16 @@ void Aircraft_1::SetBill()
     Sell_Busines=Sell_Busines+bill_info[2].toInt();
     All_Price=All_Price+bill_info[3].toInt();
 
-    BwriterN <<"Data of Aircraft"<<"\n";
-    BwriterN <<"Sell Tikets:"<<"\t"+QString::number(Sell_Tikets)+"\n";
-    BwriterN <<"Sell Economy:"<< "\t"+QString::number(Sell_Economy)+"\n";
-    BwriterN <<"Sell Busines:"<< "\t"+QString::number(Sell_Busines)+"\n";
-    BwriterN <<"All Price:"<<"\t"+QString::number(All_Price);
+    BwriterN <<"Рейс Пенза - Лос-Анджелес"<<"\n";
+    BwriterN <<"Проданное билетов:"<<"\t"+QString::number(Sell_Tikets)+"\n";
+    BwriterN <<"Проданно Эконом-класс:"<< "\t"+QString::number(Sell_Economy)+"\n";
+    BwriterN <<"Проданно Бизнес-класс:"<< "\t"+QString::number(Sell_Busines)+"\n";
+    BwriterN <<"Общая стоимость:"<<"\t"+QString::number(All_Price);
     fbill.close();
     Sell_Economy=0;
     Sell_Busines=0;
     Sell_Tikets=0;
+
 
 }
 
@@ -124,14 +127,14 @@ Aircraft_1::Aircraft_1(QWidget *parent) :
             EconomyCount=0;
             BusinesCount=0;
             HideFormBuy();
-
+            setlocale(LC_ALL,"Russian");
             fbill.open( QIODevice :: WriteOnly | QIODevice::Text);
 
-            Bwriter <<"Data of Aircraft "<< "\n";
-            Bwriter <<"Sell Tikets:"<<"\t0 \n";
-            Bwriter <<"Sell Economy: "<< "\t0 \n";
-            Bwriter <<"Sell Busines: "<<"\t0 \n";
-            Bwriter <<"All Price: "<<"\t0";
+            Bwriter <<"Рейс Пенза - Лос-Анджелес "<< "\n";
+            Bwriter <<"Проданное билетов:"<<"\t0 \n";
+            Bwriter <<"Проданно Эконом-класс: "<< "\t0 \n";
+            Bwriter <<"Проданно Бизнес-класс : "<<"\t0 \n";
+            Bwriter <<"Общая стоимость: "<<"\t0";
             fbill.close();
 
 
@@ -538,13 +541,52 @@ SetBuy(ui->pushSeats_20,1);
 
 void Aircraft_1::on_pushNextTiket_clicked()
 {
-    GetTiketInfo();
-    if(info_count!=0)
+    QString Line_1=ui->lineEdit->text();
+    QString Line_2=ui->lineEdit_3->text();
+    QString Line_3=ui->lineEdit_4->text();
+
+    if (Line_1==""|Line_2==""|Line_3=="")
     {
-    select_seats[info_count][0]="register";
-    SetSeat();
+        if (Line_1=="")
+        {
+            ui->label_FIO->setStyleSheet("color:red;");
+        }
+        else
+        {
+            ui->label_FIO->setStyleSheet("color:black;");
+        }
+        if (Line_2=="")
+        {
+            ui->label_Passport->setStyleSheet("color:red;");
+        }
+        else
+        {
+            ui->label_Passport->setStyleSheet("color:black;");
+        }
+        if (Line_3=="")
+        {
+            ui->label_Passport_2->setStyleSheet("color:red;");
+        }
+        else
+        {
+            ui->label_Passport_2->setStyleSheet("color:black;");
+        }
+        QMessageBox::warning(this,"Ошибка","Заполните все поля");
+    }
+    else
+    {
+    ui->label_FIO->setStyleSheet("color:black;");
+    ui->label_Passport->setStyleSheet("color:black;");
+    ui->label_Passport_2->setStyleSheet("color:black;");
+     GetTiketInfo();
+     if(info_count!=0)
+         {
+             select_seats[info_count][0]="register";
+             SetSeat();
+         }
     }
 
 }
+
 
 

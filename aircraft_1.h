@@ -34,6 +34,7 @@ private slots:
     void HideFormBuy();
     void SetBill();
     int GetPrice(QPushButton *seats);
+    void on_push_stat_clicked();
 };
 
 #endif // AIRCRAFT_1_H
