@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class BuyDetail;
 }
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::BuyDetail *ui;
+    void SetBillData();
 };
 
 #endif // BUYDETAIL_H
