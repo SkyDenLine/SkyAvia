@@ -26,12 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         listofflight.cpp \
-    aircraft_1.cpp
+    aircraft_1.cpp \
+    buydetail.cpp
 
 HEADERS += \
         listofflight.h \
-    aircraft_1.h
+    aircraft_1.h \
+    buydetail.h
 
 FORMS += \
         listofflight.ui \
-    aircraft_1.ui
+    aircraft_1.ui \
+    buydetail.ui

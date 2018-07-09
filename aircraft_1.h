@@ -15,16 +15,25 @@ public:
     explicit Aircraft_1(QWidget *parent = 0);
     ~Aircraft_1();
 
+
 private:
     Ui::Aircraft_1 *ui;
 
+
+
 private slots:
     void aircraft_1_seats();
-    void on_ConfirmBusines_2_clicked();
     void CheckTiketType(QPushButton *seats, int mode);
     void SetPrice();
-    void on_ConfirmBusines_3_clicked();
+    void SetSeatsType();
     void on_accept_tiket_clicked();
+    void ShowFormBuy();
+    void GetTiketInfo();
+    void SetSeat();
+    void on_pushNextTiket_clicked();
+    void HideFormBuy();
+    void SetBill();
+    int GetPrice(QPushButton *seats);
 };
 
 #endif // AIRCRAFT_1_H
