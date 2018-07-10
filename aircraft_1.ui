@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Покупка биллетов</string>
   </property>
   <widget class="QPushButton" name="pushSeats_5">
    <property name="geometry">
@@ -1092,9 +1092,9 @@
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>650</x>
+     <x>640</x>
      <y>50</y>
-     <width>81</width>
+     <width>71</width>
      <height>31</height>
     </rect>
    </property>
@@ -1315,7 +1315,7 @@ QPushButton:pressed
     <rect>
      <x>350</x>
      <y>220</y>
-     <width>101</width>
+     <width>91</width>
      <height>31</height>
     </rect>
    </property>
@@ -1340,9 +1340,9 @@ QPushButton:pressed
   <widget class="QLineEdit" name="lineEdit_4">
    <property name="geometry">
     <rect>
-     <x>650</x>
+     <x>620</x>
      <y>220</y>
-     <width>61</width>
+     <width>91</width>
      <height>31</height>
     </rect>
    </property>
@@ -1444,7 +1444,7 @@ QPushButton:pressed
   <widget class="QLabel" name="label_Passport_2">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>440</x>
      <y>200</y>
      <width>181</width>
      <height>71</height>
@@ -1610,6 +1610,35 @@ QPushButton:pressed
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Бизнес&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushSeats_Stat">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>310</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton
+{
+    color: #black;
+    background-color: #1EB4E6;
+    border-width: 2px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 4;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Статистика</string>
    </property>
   </widget>
  </widget>

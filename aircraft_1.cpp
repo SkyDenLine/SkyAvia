@@ -1,13 +1,10 @@
 #include "aircraft_1.h"
 #include "ui_aircraft_1.h"
 #include "string"
-#include "sstream"
 #include "QMessageBox"
 #include "buydetail.h"
 #include "QFile"
 #include <QTextStream>
-#include <math.h>
-#include <QDebug>
 #include <sstream>
 
 
@@ -44,7 +41,6 @@ void Aircraft_1::HideFormBuy()
 
 void Aircraft_1::SetBill()
 {
-    setlocale(LC_ALL,"Russian");
     QTextStream BwriterN (&fbill);
     fbill.open( QIODevice::ReadWrite | QIODevice::Text);
     BwriterN.readLine();
@@ -312,8 +308,7 @@ void Aircraft_1::aircraft_1_seats()
           ChangeColor(seats,2);
           select_seats[seats->text().toInt()][0]="unselected";
           int numberF =  seats->text().toInt();
-          QString name = "../Ticket_"+QString::number(numberF)+".txt";
-          QFile::remove(name);
+          QString name = "Ticket_"+QString::number(numberF)+".txt";
           if (numberF>4)
           {
 
@@ -325,6 +320,7 @@ void Aircraft_1::aircraft_1_seats()
               All_Price=-GetPrice(seats);
               Sell_Busines=-1;
           }
+          QFile::remove(name);     
           SetBill();
      }
     }
@@ -588,5 +584,9 @@ void Aircraft_1::on_pushNextTiket_clicked()
 
 }
 
-
-
+void Aircraft_1::on_pushSeats_Stat_clicked()
+{
+    BuyDetail windows_stat;
+    windows_stat.setModal(true);
+    windows_stat.exec();
+}

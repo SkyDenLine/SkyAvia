@@ -14,6 +14,7 @@ ListOfFlight::~ListOfFlight()
     delete ui;
 }
 
+//
 void ListOfFlight::on_pushButton_clicked()
 {
     Aircraft_1 Aircraft_1_Layot;
