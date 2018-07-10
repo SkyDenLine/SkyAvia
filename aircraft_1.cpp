@@ -58,11 +58,11 @@ void Aircraft_1::SetBill()
     Sell_Busines=Sell_Busines+bill_info[2].toInt();
     All_Price=All_Price+bill_info[3].toInt();
 
-    BwriterN <<"Рейс Пенза - Лос-Анджелес"<<"\n";
-    BwriterN <<"Проданное билетов:"<<"\t"+QString::number(Sell_Tikets)+"\n";
-    BwriterN <<"Проданно Эконом-класс:"<< "\t"+QString::number(Sell_Economy)+"\n";
-    BwriterN <<"Проданно Бизнес-класс:"<< "\t"+QString::number(Sell_Busines)+"\n";
-    BwriterN <<"Общая стоимость:"<<"\t"+QString::number(All_Price);
+    BwriterN <<"Flyght Penza - Los-Angeles"<<"\n";
+    BwriterN <<"Sell_Tiket:"<<"\t"+QString::number(Sell_Tikets)+"\n";
+    BwriterN <<"Sell Economy ticket:"<< "\t"+QString::number(Sell_Economy)+"\n";
+    BwriterN <<"Sell Busines ticket:"<< "\t"+QString::number(Sell_Busines)+"\n";
+    BwriterN <<"All Price:"<<"\t"+QString::number(All_Price);
     fbill.close();
     Sell_Economy=0;
     Sell_Busines=0;
@@ -126,11 +126,11 @@ Aircraft_1::Aircraft_1(QWidget *parent) :
             setlocale(LC_ALL,"Russian");
             fbill.open( QIODevice :: WriteOnly | QIODevice::Text);
 
-            Bwriter <<"Рейс Пенза - Лос-Анджелес "<< "\n";
-            Bwriter <<"Проданное билетов:"<<"\t0 \n";
-            Bwriter <<"Проданно Эконом-класс: "<< "\t0 \n";
-            Bwriter <<"Проданно Бизнес-класс : "<<"\t0 \n";
-            Bwriter <<"Общая стоимость: "<<"\t0";
+            Bwriter <<"Flyght Penza - Los-Angeles "<< "\n";
+            Bwriter <<"Sell_Tiket:"<<"\t0 \n";
+            Bwriter <<"Sell Economy ticket: "<< "\t0 \n";
+            Bwriter <<"Sell Busines ticket : "<<"\t0 \n";
+            Bwriter <<"All Price: "<<"\t0";
             fbill.close();
 
 
